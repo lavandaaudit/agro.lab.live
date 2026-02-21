@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AGRO HUB</title>
+<title>AGRO AUTO FLOW</title>
 
 <style>
 * {
@@ -16,42 +16,33 @@ html, body {
     width: 100%;
     height: 100%;
     background: #000;
-    overflow-x: hidden;
+    overflow: hidden; /* вимикаємо ручний скрол */
     font-family: Arial, sans-serif;
 }
 
-/* Контейнер */
 .wrapper {
     width: 100%;
+    height: 200vh; /* 2 екрани */
+    transition: transform 1.2s ease-in-out;
 }
 
-/* Блок з iframe */
 .section {
     width: 100%;
-    height: 100vh; /* Кожна сторінка = 1 екран */
-    overflow: hidden; /* Внутрішній скрол вимкнено */
+    height: 100vh;
 }
 
-/* Сам iframe */
 iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
 }
-
-/* Мобільна адаптація */
-@media (max-width: 768px) {
-    .section {
-        height: 100vh;
-    }
-}
 </style>
-
 </head>
+
 <body>
 
-<div class="wrapper">
+<div class="wrapper" id="wrapper">
 
     <div class="section">
         <iframe src="https://lavandaaudit.github.io/agro.chikulay.pro/"></iframe>
@@ -62,6 +53,22 @@ iframe {
     </div>
 
 </div>
+
+<script>
+let current = 0;
+const wrapper = document.getElementById('wrapper');
+const total = 2;
+
+function autoSlide() {
+    current++;
+    if (current >= total) {
+        current = 0;
+    }
+    wrapper.style.transform = `translateY(-${current * 100}vh)`;
+}
+
+setInterval(autoSlide, 8000); // 8 секунд
+</script>
 
 </body>
 </html>
