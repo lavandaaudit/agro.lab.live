@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGRO HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Контейнер */
+.wrapper {
+    width: 100%;
+}
+
+/* Блок з iframe */
+.section {
+    width: 100%;
+    height: 100vh; /* Кожна сторінка = 1 екран */
+    overflow: hidden; /* Внутрішній скрол вимкнено */
+}
+
+/* Сам iframe */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+    .section {
+        height: 100vh;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="section">
+        <iframe src="https://lavandaaudit.github.io/agro.chikulay.pro/"></iframe>
+    </div>
+
+    <div class="section">
+        <iframe src="https://lavandaaudit.github.io/agro.obstanovka/"></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
